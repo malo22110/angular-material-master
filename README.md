@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Dependencies
 
-    list of the modules included:
+list of the modules included:
         - animations
         - cdk
         - flex-layout
