@@ -10,6 +10,9 @@ import { MaterialModule } from './material/material.module';
     LayoutModule,
     MaterialModule
   ],
-  declarations: []
+  declarations: [],
+  exports: [
+    LayoutModule
+  ]
 })
 export class SharedModule { }
