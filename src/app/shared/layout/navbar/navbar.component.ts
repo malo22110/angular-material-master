@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MaterialModule } from '../../material/material.module';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { SidenavService } from '../sidenav/sidenav.service';
 
 
 @Component({
@@ -9,9 +11,12 @@ import { MaterialModule } from '../../material/material.module';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
   ngOnInit() {
   }
 
 }
+
+// this.sidenavService.setSidenav(this.sidenavComp.sidenav);
+

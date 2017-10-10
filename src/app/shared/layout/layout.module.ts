@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SidenavService } from './sidenav/sidenav.service';
 
 
 @NgModule({
@@ -13,11 +14,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule
   ],
-  declarations: [NavbarComponent, SidebarComponent, FooterComponent],
+  declarations: [NavbarComponent, SidenavComponent, FooterComponent],
   exports: [
-    SidebarComponent,
+    SidenavComponent,
     FooterComponent,
     NavbarComponent
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {
+}
