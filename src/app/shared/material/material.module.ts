@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { A11yModule } from '@angular/cdk/a11y';
 import { CompatibilityModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material';
@@ -31,8 +29,8 @@ import { MatTooltipModule } from '@angular/material';
 // import { PlatformModule } from '@angular/material';
 // import { StyleModule } from '@angular/material';
 
+
 const MATERIAL_MODULES = [
-  CommonModule,
   MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
@@ -48,7 +46,7 @@ const MATERIAL_MODULES = [
   MatSidenavModule,
   MatTabsModule,
   MatToolbarModule,
-  // These modules include providers.
+  // modules that include providers.
   A11yModule,
   CompatibilityModule,
   MatButtonToggleModule,

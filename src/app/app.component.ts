@@ -1,20 +1,34 @@
-import { SidenavService } from './shared/layout/sidenav/sidenav.service';
-import { Component,  ViewChild, AfterViewInit } from '@angular/core';
+import { Component,  OnInit,  ViewChild } from '@angular/core';
+
 import { MatSidenav } from '@angular/material';
+import { SidenavService } from './layout/sidenav/sidenav.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   @ViewChild('sidenav') public sidenav: MatSidenav;
+
+
+    /**
+   * Constructor of the class.
+   *
+   * @param {SidenavService}      sidenavService
+   */
   constructor(private sidenavService: SidenavService) {
-    sidenavService.setSidenav(this.sidenav);
+  }
+
+
+  public ngOnInit(): void {
+    // Store sidenav to service
+    this.sidenavService
+      .setSidenav(this.sidenav);
   }
 }
