@@ -6,9 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material/material.module';
+import { Ng2Webstorage } from 'ng2-webstorage';
 
 import 'hammerjs';
+
+import { Services } from './services/';
+import { MaterialModule } from './material/material.module';
+import { TranslationModule } from './translation/translation.module';
 
 @NgModule({
   imports: [
@@ -20,12 +24,15 @@ import 'hammerjs';
     RouterModule,
     MaterialModule,
     FlexLayoutModule,
+    Ng2Webstorage,
+    TranslationModule,
   ],
   providers: [
     {
       provide: 'Window',
       useValue: window,
     },
+    ...Services,
   ],
   exports: [
     CommonModule,
@@ -36,6 +43,8 @@ import 'hammerjs';
     RouterModule,
     MaterialModule,
     FlexLayoutModule,
+    Ng2Webstorage,
+    TranslationModule,
   ],
 })
 export class SharedModule { }

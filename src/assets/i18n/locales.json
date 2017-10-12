@@ -1,0 +1,12 @@
+[
+    {
+      "ref": "en",
+      "language": "English",
+      "shortName": "EN"
+    },
+    {
+      "code": "fr",
+      "name": "Franais",
+      "shortName": "FR"
+    }
+  ]

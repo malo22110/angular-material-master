@@ -21,4 +21,13 @@ html, body {
     flex-direction: column;
     flex: 1;
   }
+
+  mat-sidenav {
+    width: 200px;
+  }
+   
+  .normal-content {
+    padding: 0 1em;
+  }
+  
   
