@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { LayoutModule } from './layout/layout.module';
   imports: [
     AppRoutingModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    AuthModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,51 @@
+mat-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.container{
+  transition: opacity .8s ease-in-out;
+  background: #3f51b5;
+}
+
+.login {
+  width: 250px;
+  background: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+  text-align: center;  
+
+  &.mat-card {
+    padding: 0;
+  }
+
+  form {
+    margin: 0 16px;
+  }
+
+  .text {
+    margin-bottom: 16px;
+  }
+
+  button {
+    margin: 0 4px;
+  }
+
+  mat-toolbar {
+    min-height: 48px;
+
+    mat-toolbar-row {
+      height: 48px;
+    }
+  }
+
+  mat-card-content {
+    padding: 8px 16px;
+  }
+
+  mat-icon {
+    margin-right: 8px;
+  }
+}

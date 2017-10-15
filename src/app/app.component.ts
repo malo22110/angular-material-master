@@ -5,12 +5,14 @@ import { LocalStorageService } from 'ng2-webstorage';
 
 
 import { SidenavService } from './layout/sidenav/sidenav.service';
+import { NavbarService } from './layout/navbar/navbar.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [NavbarService]
 })
 
 

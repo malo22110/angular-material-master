@@ -1,0 +1,41 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <mat-spinner *ngIf="loading" color="accent"></mat-spinner>
+
+  <mat-card class="login">
+    <mat-toolbar color="primary">{{ 'TITLE' | translate }}</mat-toolbar>
+
+    <mat-card-content>
+      <form #loginForm="ngForm" (submit)="login($event)" novalidate autocomplete="off"
+        [class.opacity-50]="loading"
+      >
+        <mat-input-container>
+          <mat-icon matPrefix>person</mat-icon>
+          <span></span>
+          <input name="username" placeholder="{{ 'PLACEHOLDER_USERNAME' | translate }}" type="text" required
+            matInput
+            [(ngModel)]="username"
+            [disabled]="loading"
+            #usernameControl
+          />
+        </mat-input-container>
+
+        <mat-input-container>
+          <mat-icon matPrefix>security</mat-icon>
+          <span></span>
+          <input name="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" type="password" required
+            matInput
+            [(ngModel)]="password"
+            [disabled]="loading"
+            #passwordControl
+          />
+        </mat-input-container>
+
+        <div>
+          <button type="submit" mat-raised-button color="primary"
+            [disabled]="loginForm.invalid || loading"
+          >{{ 'BUTTON_SUBMIT' | translate }}</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

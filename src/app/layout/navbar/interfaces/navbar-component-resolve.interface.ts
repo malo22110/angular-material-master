@@ -1,5 +1,5 @@
 import { LocaleModel } from '../../../shared/translation/';
 
-export interface HeaderComponentResolveInterface {
+export interface NavbarComponentResolveInterface {
   locales: Array<LocaleModel>;
 }

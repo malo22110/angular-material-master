@@ -1,1 +1,1 @@
-export * from './header-component-resolve.interface';
+export * from './navbar-component-resolve.interface';

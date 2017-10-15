@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container"  *ngIf="navbarService.visible">
   <mat-toolbar class="mat-elevation-z10" color="primary">
     <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
       <button mat-icon-button (click)="toggleSidenav()">
         <mat-icon>more_vert</mat-icon>
       </button>
 
-      <span>angular-cli-frontend</span>
+      <span>{{title}}</span>
 
       <span fxFlex></span>
 

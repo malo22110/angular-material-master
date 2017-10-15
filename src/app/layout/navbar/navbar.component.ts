@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LocalStorageService } from 'ng2-webstorage';
 import { TranslateService } from '@ngx-translate/core';
 
 import { SharedModule } from '../../shared/shared.module';
 import { LocaleModel } from '../../shared/translation/';
-import { HeaderComponentResolveInterface } from './interfaces/';
+import { NavbarComponentResolveInterface } from './interfaces/';
 
 import { SidenavService } from '../sidenav/sidenav.service';
+import { NavbarService } from './navbar.service';
 
 
 
@@ -19,6 +20,8 @@ import { SidenavService } from '../sidenav/sidenav.service';
 export class NavbarComponent implements OnInit {
   public locales: Array<LocaleModel>;
   
+  @Input()
+  private title: string;
   
   /**
    * Constructor of the class.
@@ -32,12 +35,13 @@ export class NavbarComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private localStorage: LocalStorageService,
     private translateService: TranslateService,
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    private navbarService: NavbarService
   ) { }
 
   ngOnInit(): void {
   // Store locales from route resolve
-    this.activatedRoute.data.subscribe((data: HeaderComponentResolveInterface) => {
+    this.activatedRoute.data.subscribe((data: NavbarComponentResolveInterface) => {
       this.locales = data.locales;
     });
   }
