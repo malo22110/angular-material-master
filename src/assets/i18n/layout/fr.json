@@ -1,6 +1,5 @@
 {
-    "FOOTER_LINK_ISSUES": "Issues",
-    "HEADER_BUTTON_LOGIN": "Connection",
-    "HEADER_BUTTON_LOGOUT": "Déconnection"
-  }
-  
+  "FOOTER_LINK_ISSUES": "issues",
+  "HEADER_BUTTON_LOGIN": "Connexion",
+  "HEADER_BUTTON_LOGOUT": "Déconnexion"
+}

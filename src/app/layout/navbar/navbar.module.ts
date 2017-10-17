@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
-import { NavbarComponent } from './index';
+import { NavbarComponent, LocaleResolver } from './index';
 
 @NgModule({
   imports: [
@@ -13,6 +13,9 @@ import { NavbarComponent } from './index';
   exports: [
     NavbarComponent,
   ],
+  providers: [
+    LocaleResolver,
+  ]
 })
 
 export class NavbarModule { }

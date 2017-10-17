@@ -15,7 +15,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
     FooterModule,
     NavbarModule,
     SidenavModule,
-    SharedModule
+    LayoutRoutingModule
   ],
  exports: [
   SidenavModule,

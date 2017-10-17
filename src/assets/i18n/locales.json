@@ -1,12 +1,12 @@
 [
-    {
-      "code": "en",
-      "name": "English",
-      "nameShort": "EN"
-    },
-    {
-      "code": "fr",
-      "name": "Franais",
-      "nameShort": "FR"
-    }
-  ]
+  {
+    "code": "en",
+    "name": "English",
+    "nameShort": "EN"
+  },
+  {
+    "code": "fr",
+    "name": "Français",
+    "nameShort": "FR"
+  }
+]
