@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { LoginRoutes } from './login/login.routing';
+import { SignupRoutes } from './signup/signup.routing';
 import { ProfileRoutes } from './profile/profile.routing';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ProfileRoutes } from './profile/profile.routing';
         path: 'auth',
         children: [
           ...LoginRoutes,
+          ...SignupRoutes,
           ...ProfileRoutes,
         ],
       },

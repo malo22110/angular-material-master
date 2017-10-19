@@ -1,0 +1,51 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" fxFill>
+  
+    <mat-card class="signup">
+  
+      <mat-toolbar color="primary">{{ 'TITLE' | translate }}</mat-toolbar>
+  
+      <mat-card-content>
+  
+        <div *ngIf="loading"  fxLayout="column"  fxLayoutAlign="center center" fxFill>
+          <mat-spinner color="accent" fxFill class="signup-spinner"></mat-spinner>
+        </div>
+  
+        <div *ngIf="!loading">
+          <form #signupForm="ngForm" (submit)="signup($event)" novalidate autocomplete="off" [class.opacity-50]="loading">
+          <mat-input-container>
+            <mat-icon matPrefix>person</mat-icon>
+            <span></span>
+            <input name="username" placeholder="{{ 'PLACEHOLDER_USERNAME' | translate }}" type="text" required matInput [(ngModel)]="username"
+              [disabled]="loading" #usernameControl />
+          </mat-input-container>
+
+          <mat-input-container>
+            <mat-icon matPrefix>mail</mat-icon>
+            <span></span>
+            <input name="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" type="mail" required matInput [(ngModel)]="email"
+              [disabled]="loading" #emailControl />
+          </mat-input-container>
+
+          <mat-input-container>
+            <mat-icon matPrefix>security</mat-icon>
+            <span></span>
+            <input name="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" type="password" required matInput [(ngModel)]="password"
+              [disabled]="loading" #passwordControl />
+          </mat-input-container>
+
+          <mat-input-container>
+            <mat-icon matPrefix>security</mat-icon>
+            <span></span>
+            <input name="passwordVerif" placeholder="{{ 'PLACEHOLDER_PASSWORD_VERIFICATION' | translate }}" type="password" required matInput [(ngModel)]="passwordVerif"
+              [disabled]="loading" #passwordVerifControl />
+          </mat-input-container>
+
+          <div>
+            <button type="submit" mat-raised-button color="primary" [disabled]="signupForm.invalid || loading">{{ 'BUTTON_SUBMIT' | translate }}</button>
+            <button [routerLink]="['/auth/login']" mat-button [disabled]=" loading">{{ 'BUTTON_LOGIN' | translate }}</button>            
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -46,6 +46,20 @@ export class AuthService {
     ;
   }
 
+    /**
+   * Method to make signup request to backend with given credentials.
+   *
+   * @param credentials
+   * @returns {Observable<TokenDataInterface>}
+   */
+  public signup(credentials): Observable<TokenDataInterface> {
+    return this.http
+      .post(`${this.configService.getApiUrl()}auth/getToken`, credentials)
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json() || 'Invalid credentials'))
+    ;
+  }
+
   /**
    * Method to logout current user
    *

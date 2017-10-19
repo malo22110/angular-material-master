@@ -4,6 +4,7 @@ import { JwtHelper, AuthHttp, AuthConfig } from 'angular2-jwt';
 import { LocalStorageService } from 'ng2-webstorage';
 
 import { LoginModule } from './login/login.module';
+import { SignupModule } from './signup/signup.module';
 import { ProfileModule } from './profile/profile.module';
 import { AnonymousGuard, AuthenticationGuard } from './guards/';
 import { AuthService, UserService } from './services/';
@@ -38,6 +39,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 @NgModule({
   imports: [
     LoginModule,
+    SignupModule,
     ProfileModule,
     AuthRoutingModule,
   ],
@@ -58,8 +60,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   ],
   exports: [
     LoginModule,
-  ],
-  declarations: [],
+    SignupModule
+  ]
 })
 
 export class AuthModule { }

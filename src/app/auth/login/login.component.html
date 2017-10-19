@@ -28,6 +28,7 @@
 
           <div>
             <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid || loading">{{ 'BUTTON_SUBMIT' | translate }}</button>
+            <button [routerLink]="['/auth/signup']" mat-button [disabled]=" loading">{{ 'BUTTON_SIGNUP' | translate }}</button>
           </div>
         </form>
       </div>

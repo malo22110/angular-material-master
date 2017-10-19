@@ -1,0 +1,125 @@
+import { Component, ViewEncapsulation, Input, ViewChild, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService, UserService } from '../services/';
+import { MessageService } from '../../shared/services/';
+import { NavbarService } from '../../layout/navbar/navbar.service';
+
+
+@Component({
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+
+export class SignupComponent implements OnInit, AfterViewInit {
+  @ViewChild('usernameControl')
+  usernameControl: ElementRef;
+
+  @ViewChild('usernameControl')
+  emailControl: ElementRef;
+
+  @ViewChild('usernameControl')
+  passwordControl: ElementRef;
+
+  @ViewChild('passwordControl')
+  passwordVerifControl: ElementRef;
+
+  @Input()
+  username: string;
+
+  @Input()
+  email: string;
+
+  @Input()
+  password: string;
+
+  @Input()
+  passwordVerif: string;
+
+  public loading = false;
+
+  /**
+   * Constructor of the class.
+   *
+   * @param {AuthService}     authService
+   * @param {UserService}     userService
+   * @param {MessageService}  messageService
+   * @param {Router}          router
+   */
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+    private messageService: MessageService,
+    private router: Router,
+    private navbarService: NavbarService
+  ) { }
+
+  // On component init we want to set focus to username / email input.
+  ngOnInit(): void {
+    // Reset form data
+    this.username = '';
+    this.email = '';
+    this.password = '';
+    this.passwordVerif = '';
+    // Remove loading
+    this.loading = false;
+
+    this.navbarService.hide();
+  }
+  
+  ngOnDestroy() {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.navbarService.show();
+  }
+
+  // Set focus to username / email input
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.usernameControl.nativeElement.focus();
+    }, 500);
+  }
+
+  /**
+   * Method to make actual signup
+   *
+   * @param {Event} event
+   */
+  public signup(event: Event) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    this.loading = true;
+
+    this.authService
+      .signup({username: this.username, password: this.password})
+      .subscribe(
+        (data) => {
+          // Store tokens for current user
+          this.userService.storeTokens(data);
+
+          // Fetch user profile from token
+          const profile = this.userService.profile();
+
+          this.loading = false;
+
+          // Attach message
+          this.messageService.simple(`Welcome ${profile.surname}, ${profile.firstname}!`);
+
+          // And redirect user to profile page
+          return this.router.navigate(['auth/profile']);
+        },
+        (error) => {
+          this.messageService.simple(error.message);
+
+          // Clear local storage data
+          this.userService.erase();
+
+          this.ngOnInit();
+        }
+      )
+    ;
+  }
+}
