@@ -1,0 +1,9 @@
+{
+    "TITLE": "Sign up",
+    "PLACEHOLDER_USERNAME": "Username or email",
+    "PLACEHOLDER_EMAIL": "email",        
+    "PLACEHOLDER_PASSWORD": "Password",
+    "PLACEHOLDER_PASSWORD_VERIFICATION": "Password confirmation",
+    "BUTTON_LOGIN": "Login",
+    "BUTTON_SUBMIT": "Sign up"
+  }
