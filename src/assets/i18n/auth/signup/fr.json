@@ -5,5 +5,5 @@
     "PLACEHOLDER_PASSWORD": "mot de passe",
     "PLACEHOLDER_PASSWORD_VERIFICATION": "confirmation",
     "BUTTON_LOGIN": "connexion", 
-    "BUTTON_SIGNUP": "Inscription"    
+    "BUTTON_SUBMIT": "Inscription"    
 }
