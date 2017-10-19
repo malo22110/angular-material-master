@@ -1,6 +1,6 @@
 {
   "TITLE": "Connexion",
-  "PLACEHOLDER_USERNAME": "pseudo ou email",
+  "PLACEHOLDER_USERNAME": "Pseudo ou email",
   "PLACEHOLDER_PASSWORD": "mot de passe",
   "BUTTON_SUBMIT": "connexion",
   "BUTTON_SIGNUP": "Inscription"

@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { LocalStorageService } from 'ng2-webstorage';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Rx';
 
 import { ConfigService } from '../../services/config.service';
 import { TranslationCacheService } from './translation-cache.service';

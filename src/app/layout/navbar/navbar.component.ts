@@ -19,10 +19,10 @@ import { NavbarService } from './navbar.service';
 })
 export class NavbarComponent implements OnInit {
   public locales: Array<LocaleModel>;
-  
+
   @Input()
   private title: string;
-  
+
   /**
    * Constructor of the class.
    *
@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
    * @param {LocalStorageService} localStorage
    * @param {TranslateService}    translateService
    * @param {SidenavService}      sidenavService
+   * @param {NavbarService}       NavbarService
    */
   public constructor(
     private activatedRoute: ActivatedRoute,

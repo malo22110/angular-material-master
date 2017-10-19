@@ -56,6 +56,13 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {},
+    "directive": {},
+    "guard": {},
+    "interface": {},
+    "module": {},
+    "pipe": {},
+    "service": {},
+    "serve": {}
   }
 }
