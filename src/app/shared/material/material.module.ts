@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { A11yModule } from '@angular/cdk/a11y';
-import { CompatibilityModule } from '@angular/material';
+// import { CompatibilityModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
@@ -50,7 +50,7 @@ const MATERIAL_MODULES = [
   MatToolbarModule,
   // These modules include providers.
   A11yModule,
-  CompatibilityModule,
+  // CompatibilityModule,
   MatButtonToggleModule,
   MatDialogModule,
   MatIconModule,
